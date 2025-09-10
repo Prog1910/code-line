@@ -1,0 +1,40 @@
+@use 'sass:list';
+
+@function generate-shadows($n, $r) {
+	$shadows: ();
+	@for $i from 0 through $n - 1 {
+		$angle: calc(2 * pi * #{$i} / #{$n});
+		$x: calc(cos($angle) * $r);
+		$y: calc(sin($angle) * $r);
+		$shadow: #{$x} #{$y} 0 #{$i}px;
+		$shadows: list.append($shadows, $shadow, comma);
+	}
+	@return $shadows;
+}
+
+.loader {
+	--loaderRadius: 36px;
+	--loaderDotsSize: calc(var(--loaderRadius) / 3.6);
+
+	@include square(calc(2 * (var(--loaderRadius) + var(--loaderDotsSize))));
+
+	position: relative;
+}
+
+.loader__inner {
+	$loaderDotsCount: 8;
+
+	@include square(var(--loaderDotsSize));
+	@include abs-center;
+
+	color: var(--color-blue-primary);
+	border-radius: 50%;
+	box-shadow: generate-shadows($loaderDotsCount, var(--loaderRadius));
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(1turn);
+	}
+}

@@ -1,0 +1,41 @@
+@mixin flex-center($isInline: false) {
+	@if ($isInline) {
+		display: inline-flex;
+	} @else {
+		display: flex;
+	}
+
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin abs-center {
+	translate: -50% -50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+@mixin square($size) {
+	aspect-ratio: 1;
+	width: $size;
+	height: $size;
+}
+
+@mixin visually-hidden {
+	clip: rect(0 0 0 0) !important;
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+	clip-path: inset(100%) !important;
+}
+
+@mixin focus-visible {
+	outline: 2px solid var(--color-blue-primary);
+	transition-duration: 0s !important;
+}

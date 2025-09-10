@@ -1,0 +1,84 @@
+html {
+	&.is-lock {
+		overflow: hidden;
+	}
+}
+
+body {
+	text-wrap-style: pretty;
+	overflow-wrap: break-word;
+	font-size: 16px;
+	font-family: var(--font-family-base), sans-serif;
+	hyphens: auto;
+	color: var(--color-black);
+	background-color: var(--color-white);
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	font-weight: bold;
+	color: var(--color-black);
+}
+
+h1,
+.h1 {
+	font-size: 24px;
+}
+
+h2,
+.h2 {
+	font-size: 22px;
+}
+
+h3,
+.h3 {
+	font-size: 18px;
+}
+
+h4,
+.h4 {
+	font-weight: 900;
+	font-size: 14px;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+a {
+	color: inherit;
+
+	&[class] {
+		text-decoration: none;
+	}
+
+	@include hover {
+		color: var(--color-grey-dark);
+	}
+}
+
+:focus-visible {
+	@include focus-visible;
+}

@@ -1,0 +1,43 @@
+.burger-button {
+	--burgerButtonStrokeWidth: 20px;
+
+	@include square(40px);
+
+	position: relative;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+
+	&::before,
+	&::after {
+		@include abs-center;
+
+		width: var(--burgerButtonStrokeWidth);
+		height: 2px;
+		background-color: var(--color-black);
+		transition-duration: var(--transition-duration);
+		content: '';
+	}
+
+	&::before {
+		box-shadow:
+			0 -6px 0 var(--color-black),
+			0 6px 0 var(--color-black);
+	}
+
+	&.is-active {
+		&::before,
+		&::after {
+			width: calc(var(--burgerButtonStrokeWidth) * sqrt(2));
+		}
+
+		&::before {
+			rotate: 45deg;
+			box-shadow: none;
+		}
+
+		&::after {
+			rotate: -45deg;
+		}
+	}
+}

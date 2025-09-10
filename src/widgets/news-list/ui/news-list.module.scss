@@ -1,0 +1,12 @@
+.news-list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.news-list__item {
+	&:not(:last-child) {
+		padding-block-end: var(--section-padding-y);
+		border-block-end: var(--border);
+	}
+}

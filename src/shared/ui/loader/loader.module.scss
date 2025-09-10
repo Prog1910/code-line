@@ -1,0 +1,14 @@
+.loader {
+	@include flex-center;
+}
+
+.loader__icon {
+	color: var(--color-blue-primary);
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(1turn);
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"cSpell.words": ["articlesearch", "BESIDER", "pxtorem"],
+
+	"editor.formatOnSave": true,
+
+	"notebook.codeActionsOnSave": {
+		"source.sortImports": "explicit",
+		"source.organizeImports": "explicit",
+		"source.removeUnusedImports": "explicit",
+		"source.fixAll.eslint": "explicit"
+	}
+}

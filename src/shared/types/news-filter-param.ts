@@ -1,0 +1,1 @@
+export type TNewsFilterParam = 'SCIENCE' | 'GENERAL' | 'ENTERTAINMENT' | 'TECHNOLOGY' | 'BUSINESS' | 'HEALTH' | 'SPORTS'
